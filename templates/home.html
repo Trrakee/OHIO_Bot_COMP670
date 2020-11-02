@@ -33,11 +33,15 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: #a10003;
             font-family: "proxima-nova", "Source Sans Pro", sans-serif;
             font-size: 1em;
             letter-spacing: 0.1px;
-            color: #32465a;
+            background: rgb(94, 0, 0);
+            background: -moz-radial-gradient(circle, rgba(94, 0, 0, 0.48503151260504207) 0%, rgba(45, 67, 253, 1) 100%);
+            background: -webkit-radial-gradient(circle, rgba(94, 0, 0, 0.48503151260504207) 0%, rgba(45, 67, 253, 1) 100%);
+            background: radial-gradient(circle, rgba(94, 0, 0, 0.48503151260504207) 0%, rgba(45, 67, 253, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5e0000", endColorstr="#2d43fd", GradientType=1);
+            overflow: hidden;
             text-rendering: optimizeLegibility;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
             -webkit-font-smoothing: antialiased;
@@ -50,7 +54,7 @@
             height: 92vh;
             min-height: 300px;
             max-height: 720px;
-            background: #E6EAEA;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         @media screen and (max-width: 360px) {
@@ -66,8 +70,8 @@
             max-width: 340px;
             width: 40%;
             height: 100%;
-            background: #2c3e50;
-            color: #f5f5f5;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
             overflow: hidden;
             position: relative;
         }
@@ -89,6 +93,8 @@
                 width: 100%;
                 margin: 0 auto;
                 padding: 5px 0 0 0;
+                border-style: solid;
+                border-width: thin;
                 background: #32465a;
             }
         }
@@ -260,6 +266,7 @@
 
         #frame #sidepanel #profile .wrap #status-options ul li:hover {
             background: #496886;
+
         }
 
         #frame #sidepanel #profile .wrap #status-options ul li span.status-circle {
@@ -423,6 +430,9 @@
                 height: calc(100% - 149px);
                 overflow-y: scroll;
                 overflow-x: hidden;
+                border-style: solid;
+                border-color: white;
+
             }
 
             #frame #sidepanel #contacts::-webkit-scrollbar {
@@ -432,11 +442,13 @@
 
         #frame #sidepanel #contacts.expanded {
             height: calc(100% - 334px);
+            border-style: solid;
         }
 
         #frame #sidepanel #contacts::-webkit-scrollbar {
-            width: 8px;
+            width: 0px;
             background: #2c3e50;
+
         }
 
         #frame #sidepanel #contacts::-webkit-scrollbar-thumb {
@@ -453,11 +465,15 @@
         @media screen and (max-width: 735px) {
             #frame #sidepanel #contacts ul li.contact {
                 padding: 6px 0 46px 8px;
+                border-style: solid;
+                border-color: white;
             }
         }
 
         #frame #sidepanel #contacts ul li.contact:hover {
             background: #32465a;
+            border-style: solid;
+            border-color: white;
         }
 
         #frame #sidepanel #contacts ul li.contact.active {
@@ -641,7 +657,7 @@
             width: 100%;
             height: 60px;
             line-height: 60px;
-            background: #f5f5f5;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         #frame .content .contact-profile img {
@@ -670,10 +686,13 @@
 
         #frame .content .contact-profile .social-media i:hover {
             color: #435f7a;
+            border-style: solid;
         }
 
         #frame .content .messages {
             height: auto;
+            font-family: Lucida Console, Lucida Sans Typewriter, monaco, Bitstream Vera Sans Mono, monospace;
+
             min-height: calc(100% - 93px);
             max-height: calc(100% - 93px);
             overflow-y: scroll;
@@ -713,8 +732,11 @@
         }
 
         #frame .content .messages ul li.sent p {
-            background: #435f7a;
+            background: #5fc9f8;
             color: #f5f5f5;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid rgba(255, 255, 255, 0.2);
         }
 
         #frame .content .messages ul li.replies img {
@@ -761,11 +783,14 @@
         #frame .content .message-input .wrap input {
             font-family: "proxima-nova", "Source Sans Pro", sans-serif;
             float: left;
-            border: none;
+            border-style: solid;
             width: calc(100% - 50px);
             padding: 11px 34px 10px 8px;
             font-size: 0.8em;
-            color: #32465a;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.03);
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
         }
 
         @media screen and (max-width: 735px) {
@@ -784,7 +809,7 @@
             z-index: 4;
             margin-top: 10px;
             font-size: 1.1em;
-            color: #435f7a;
+            color: #53d769;
             opacity: .5;
             cursor: pointer;
         }
@@ -806,8 +831,9 @@
             width: 50px;
             padding: 12px 0;
             cursor: pointer;
-            background: #32465a;
-            color: #f5f5f5;
+            background: #fc3d39;
+            opacity: .6;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         @media screen and (max-width: 735px) {
@@ -817,11 +843,20 @@
         }
 
         #frame .content .message-input .wrap button:hover {
-            background: #435f7a;
+            background: #fc3d39;
+            opacity: 1;
         }
 
         #frame .content .message-input .wrap button:focus {
             outline: none;
+        }
+
+        ::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1;
+            /* Firefox */
+            font-size: 18px;
         }
 
     </style>
@@ -855,7 +890,9 @@
         <div class="content">
             <div class="contact-profile">
                 <img src="https://octaneai.com/static/Octie_Normal.png" alt="" />
-                <p>O.H.I.O. - Open Host Informative Object</p>
+
+                <p style="color:white; font-family: " "Arial Black" , Gadget, sans-serif"">O.H.I.O. - Open Host Informative Object</p>
+
             </div>
             <div class="messages">
                 <ul>
@@ -865,7 +902,7 @@
                 <div class="wrap">
                     <div id="userInput">
                         <input id="textInput" type="text" name="msg" placeholder="Write your message..." />
-                        <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        <button class="submit"><i style="color: white" class="fa fa-paper-plane" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>

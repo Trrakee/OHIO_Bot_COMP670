@@ -14,7 +14,7 @@ if os.path.exists(BRAIN_FILE):
     k.loadBrain(BRAIN_FILE)
 else:
     print("Parsing aiml_package files")
-    k.bootstrap(learnFiles="pretrained_model/learningFileList.aiml_package", commands="load aiml_package")
+    k.bootstrap(learnFiles="pretrained_model/learningFileList.aiml", commands="load aiml")
     print("Saving brain file: " + BRAIN_FILE)
     k.saveBrain(BRAIN_FILE)
 
