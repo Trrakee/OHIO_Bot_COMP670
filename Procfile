@@ -1,1 +1,1 @@
-web: gunicorn app:OHIObot
+web: gunicorn app:app
