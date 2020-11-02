@@ -1,5 +1,4 @@
 import os
-import webbrowser
 
 import aiml
 from autocorrect import spell
