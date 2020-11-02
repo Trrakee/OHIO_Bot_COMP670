@@ -1,14 +1,13 @@
 import os
-
+import aiml
 from autocorrect import spell
 from flask import Flask, render_template, request
 
-import aiml_package
 
 app = Flask(__name__)
 
 BRAIN_FILE = "pretrained_model/pretrainedModel.dump"
-k = aiml_package.Kernel()
+k = aiml.Kernel()
 
 if os.path.exists(BRAIN_FILE):
     print("Loading from brain file: " + BRAIN_FILE)
